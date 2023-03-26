@@ -67,7 +67,8 @@ function GameSim(home::Float64, away::Float64, TeamH::String, TeamA::String)
 
     data = [HomeWinOdds, 2.00, DrawOdds, 3.40, AwayWinOdds, 3.60]
     labels = ["HWin", "FDHWin", "Draw", "FDDraw", "AWin", "FDWwin"]
-    OddsBar = bar(data, xticks=(1:length(data), labels), title="OddsVsFanduel", xlabel="Bet Type", ylabel="Odds (Decimal)", legend=false)
+    OddsBar = bar(data, xticks=(1:length(data), labels), title="OddsVsFanduel", xlabel="Bet Type", ylabel="Odds (Decimal)",     
+            legend=false, rotation=(45))
     savefig("Odds$TeamH.png")
 
     plot(homeg, awayg, GoalDens, OddsBar, layout=(2,2))
